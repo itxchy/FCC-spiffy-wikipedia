@@ -1,0 +1,9 @@
+.result-cell {
+  min-height: 12rem;
+  margin-bottom: .2rem;
+  padding: .2rem 2rem 1.6rem;
+  transition: ease .05s;
+  &:hover {
+    background: lighten(#d8e9f3, 5%);
+  }
+}
