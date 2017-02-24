@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "bootstrap-material-design": "^0.5.10",
     "fetch-jsonp": "^1.0.6",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",

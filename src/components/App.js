@@ -30,19 +30,17 @@ class App extends Component {
 
     fetchJsonp(wikipediaSearchUri)
       .then(res => {
-        // http://stackoverflow.com/questions/38732639/accessing-object-in-returned-promise-using-fetch-w-react-js
-        // weird 
         if (res.ok) {
-          const results = res.json()
-          console.log('results', res)
-          this.setState({ data: results, searchQuery: '', newQuery: false })
+          return res.json()
         } else {
-          this.setState({ error: { status: res.status}, searchQuery: '', newQuery: false })
+          return Promise.reject({ 'bad response': res })
         }
       })
+      .then(parsedResults => {
+        this.setState({ data: parsedResults, searchQuery: '', newQuery: false })
+      })
       .catch(error => {
-        this.setState({ error: { fetch: 'Request failed', error: error }, newQuery: false})
-
+        this.setState({ error: { fetch: 'Request failed', error: error }, newQuery: false })
       })
   }
 

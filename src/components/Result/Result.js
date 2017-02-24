@@ -5,10 +5,10 @@ const { string } = React.PropTypes
 function Result (props) {
   return (
     <article className="result-cell">
-      <a href={this.props.link}>
-        <h2>{this.props.headline}</h2>
+      <a href={props.link}>
+        <h2 className="result-headline">{props.headline}</h2>
       </a>
-      <p>{this.props.description}</p>
+      <p className="result-description">{props.description}</p>
     </article>
   )
 }

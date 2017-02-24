@@ -1,5 +1,5 @@
 import React from 'react'
-import './SearchResults'
+import './SearchResults.css'
 import Result from '../Result/Result'
 const { array, object } = React.PropTypes
 

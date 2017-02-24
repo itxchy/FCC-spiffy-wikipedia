@@ -2,6 +2,13 @@
   min-height: 12rem;
   margin-bottom: .2rem;
   padding: .2rem 2rem 1.6rem;
-  transition: ease .05s; }
+  transition: ease .06s; }
   .result-cell:hover {
     background: #ecf4f9; }
+
+.result-headline {
+  text-align: center; }
+
+.result-description {
+  text-align: left;
+  font-size: 1.2em; }
