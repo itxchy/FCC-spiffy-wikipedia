@@ -4,11 +4,11 @@ const { string } = React.PropTypes
 
 function Result (props) {
   return (
-    <article className="result-cell">
+    <article className='result-cell'>
       <a href={props.link}>
-        <h2 className="result-headline">{props.headline}</h2>
+        <h2 className='result-headline'>{props.headline}</h2>
       </a>
-      <p className="result-description">{props.description}</p>
+      <p className='result-description'>{props.description}</p>
     </article>
   )
 }

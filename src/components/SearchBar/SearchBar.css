@@ -1,18 +1,26 @@
 .form-container {
   margin: 0 auto;
   text-align: center;
-  max-width: 80rem; }
+  max-width: 80rem;
+}
 
 .search-input {
   font-family: 'Poiret One', cursive;
   font-weight: 800;
   color: #000;
   font-size: 2em;
-  min-width: 40rem; }
+  min-width: 40rem;
+}
 
 .search-input:input-placeholder {
   font-size: 2em;
-  color: #000; }
+  color: #000;
+}
+
+.chance-link {
+  font-family: helvetica, sans-serif;
+  font-size: 1.2em;
+}
 
 /* Hacky fix for styling the placeholder text in the search input */
 ::-webkit-input-placeholder {

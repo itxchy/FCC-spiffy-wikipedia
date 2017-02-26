@@ -1,5 +1,8 @@
+/* global test expect */
+/* eslint-disable quotes */
+
 import React from 'react'
-import { shallow, render } from 'enzyme'
+import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
 import testData from '../../testData.json'
 import SearchResults from './SearchResults'

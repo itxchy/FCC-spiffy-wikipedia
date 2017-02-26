@@ -43,6 +43,7 @@ class SearchBar extends Component {
             Search
           </Button>
         </Form>
+        <a className='chance-link' href='http://en.wikipedia.org/wiki/Special:Random'>Take a chance!</a>
       </div>
     )
   }
