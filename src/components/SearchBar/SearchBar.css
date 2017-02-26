@@ -18,7 +18,9 @@
 ::-webkit-input-placeholder {
   font-size: 1.3em !important;
   font-weight: 500 !important;
-  color: #888 !important; }
+  color: #888 !important;
+  padding-left: 1rem !important;
+}
 
 :-moz-placeholder {
   /* Firefox 18- */

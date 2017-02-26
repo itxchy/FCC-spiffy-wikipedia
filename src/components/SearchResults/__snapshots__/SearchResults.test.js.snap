@@ -1,0 +1,4 @@
+exports[`test SearchResults snapshot test 1`] = `
+<section
+  className="results" />
+`;

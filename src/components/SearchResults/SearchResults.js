@@ -1,38 +1,59 @@
-import React from 'react'
+import React, { Component} from 'react'
 import './SearchResults.css'
 import Result from '../Result/Result'
 const { array, object } = React.PropTypes
 
-function SearchResults (props) {
-  let resultList = []
-  let error = null
-  let noResults = null
+class SearchResults extends Component {
+  constructor (props) {
+    super(props)
 
-  if (props.error) {
-    error = <h1>An error occured.</h1>
+    this.state = {
+      populatedResults: false,
+      noResults: null,
+    }
   }
 
-  if (props.searchResults.length > 1 && !props.searchResults[1][1]) {
-    noResults = <h1>Nothing Found</h1>
-  } else {
-    props.searchResults.map((result, i) => {
-      let element = (
-        <Result
-          headline={props.searchResults[1][i]}
-          description={props.searchResults[2][i]}
-          link={props.searchResults[3][i]}
-        />
-      )
-      return resultList.push(element)
-    })
+  errorCheck () {
+    if (this.props.error) {
+      return true
+    }
+    return false
   }
 
-  return (
-    <section className='results'>
-      {resultList ? resultList : noResults}
-      {error}
-    </section>
-  )
+  render () {
+    let populatedResultComponents = []
+    const noResultsMessage = <h2>Nothing Found</h2>
+    const errorMessage = <h2>An error occured.</h2>
+    let nothingFound = false
+
+    if (!this.props.error && this.props.searchResults.length > 1 && this.props.searchResults[1].length === 0) {
+      console.log('this.props.searchResults', this.props.searchResults)
+      nothingFound = true
+      populatedResultComponents = false
+    } 
+
+    if (this.props.searchResults && this.props.searchResults[1]) {
+      populatedResultComponents = this.props.searchResults[1].map((result, i) => {
+        let element = (
+          <Result
+            headline={this.props.searchResults[1][i]}
+            description={this.props.searchResults[2][i]}
+            link={this.props.searchResults[3][i]}
+            key={i}
+          />
+        )
+        return element
+      })
+    }
+
+    return (
+      <section className='results'>
+        {populatedResultComponents ? populatedResultComponents : null}
+        {nothingFound ? noResultsMessage : null}
+        {this.props.error ? errorMessage : null}
+      </section>
+    )
+  }
 }
 
 SearchResults.propTypes = {

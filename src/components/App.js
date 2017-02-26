@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   loadWikiData () {
-    const wikipediaSearchUri = `${wikipediaUri}${this.state.searchQuery}&callback=?`
+    const wikipediaSearchUri = `${wikipediaUri}${this.state.searchQuery}`
 
     fetchJsonp(wikipediaSearchUri)
       .then(res => {
