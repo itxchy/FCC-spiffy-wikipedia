@@ -1,0 +1,7 @@
+exports[`test Header snapshot test 1`] = `
+<header>
+  <h1>
+    Spiffy Wikipedia
+  </h1>
+</header>
+`;

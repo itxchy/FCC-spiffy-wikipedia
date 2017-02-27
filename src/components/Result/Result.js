@@ -14,9 +14,9 @@ function Result (props) {
 }
 
 Result.propTypes = {
-  link: string,
-  headline: string,
-  description: string
+  link: string.isRequired,
+  headline: string.isRequired,
+  description: string.isRequired
 }
 
 export default Result

@@ -1,0 +1,11 @@
+exports[`test App snapshot test 1`] = `
+<div
+  className="App">
+  <Header />
+  <SearchBar
+    onSearchSubmit={[Function]} />
+  <SearchResults
+    error={null}
+    searchResults={Array []} />
+</div>
+`;

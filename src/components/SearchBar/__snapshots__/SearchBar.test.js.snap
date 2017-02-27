@@ -1,0 +1,42 @@
+exports[`test SearchBar snapshot test 1`] = `
+<div
+  className="form-container">
+  <Form
+    bsClass="form"
+    componentClass="form"
+    horizontal={false}
+    inline={true}
+    onSubmit={[Function]}>
+    <FormGroup
+      bsClass="form-group"
+      bsSize="large"
+      controlId="searchInput">
+      <FormControl
+        bsClass="form-control"
+        className="search-input"
+        componentClass="input"
+        onChange={[Function]}
+        placeholder="What are you looking for?"
+        type="text"
+        value="" />
+    </FormGroup>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsSize="large"
+      bsStyle="default"
+      disabled={false}
+      id="search-submit"
+      onClick={[Function]}
+      type="submit">
+      Search
+    </Button>
+  </Form>
+  <a
+    className="chance-link"
+    href="https://en.wikipedia.org/wiki/Special:Random">
+    Take a chance!
+  </a>
+</div>
+`;

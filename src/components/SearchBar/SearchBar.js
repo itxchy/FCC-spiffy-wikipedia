@@ -39,7 +39,7 @@ class SearchBar extends Component {
               onChange={this.handleSearchInputChange}
             />
           </FormGroup>
-          <Button type='submit' bsSize='large' onClick={this.handleSubmit}>
+          <Button type='submit' bsSize='large' onClick={this.handleSubmit} id='search-submit'>
             Search
           </Button>
         </Form>
@@ -50,7 +50,7 @@ class SearchBar extends Component {
 }
 
 SearchBar.propTypes = {
-  onSearchSubmit: func
+  onSearchSubmit: func.isRequired
 }
 
 export default SearchBar

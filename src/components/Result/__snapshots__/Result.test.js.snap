@@ -1,0 +1,16 @@
+exports[`test Result snapshot test 1`] = `
+<article
+  className="result-cell">
+  <a
+    href="https://test.test">
+    <h2
+      className="result-headline">
+      test
+    </h2>
+  </a>
+  <p
+    className="result-description">
+    testing
+  </p>
+</article>
+`;
