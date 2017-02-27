@@ -10,7 +10,6 @@ function SearchResults (props) {
   let nothingFound = false
 
   if (!props.error && props.searchResults.length > 1 && props.searchResults[1].length === 0) {
-    console.log('props.searchResults', props.searchResults)
     nothingFound = true
     populatedResultComponents = false
   }
