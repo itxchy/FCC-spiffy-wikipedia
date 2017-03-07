@@ -1,0 +1,54 @@
+import { wikipediaUri } from '../../config.js'
+export const wikiData = [
+  "cactus",
+  [
+    "Cactus",
+    "Cactus Air Force",
+    "Cactus (American band)",
+    "Cactus Bowl",
+    "Cactus, Texas",
+    "Cactus Flower (film)",
+    "Cactus (Indian band)",
+    "Cactus wren",
+    "Cactus Jack (band)",
+    "Cactus Hill"
+  ],
+  [
+    "A cactus (plural: cacti, cactuses, or cactus) is a member of the plant family Cactaceae, a family comprising about 127 genera with some 1750 known species of the order Caryophyllales.",
+    "Cactus Air Force refers to the ensemble of Allied air power assigned to the island of Guadalcanal from August 1942 until December 1942 during the early stages of the Guadalcanal Campaign, particularly those operating from Henderson Field.",
+    "Cactus is an American hard rock band, formed in 1969.",
+    "The Cactus Bowl, officially the Motel 6 Cactus Bowl for sponsorship purposes, is an NCAA Football Bowl Subdivision college football bowl game that has been played in the state of Arizona since 1989.",
+    "Cactus is a city in Moore County, Texas, United States, along U.S. Route 287. The population was 3,179 at the 2010 census.",
+    "Cactus Flower is a 1969 American comedy film directed by Gene Saks and starring Walter Matthau, Ingrid Bergman, and Goldie Hawn, who won an Oscar for her performance.",
+    "Cactus (Bengali: ক্যাকটাস) is an Indian Bengali rock band from Kolkata, West Bengal, India. Since inception they have recorded four full-length studio albums and have performed over 2500 concerts across India & abroad.",
+    "The cactus wren (Campylorhynchus brunneicapillus) is a species of wren that is native to the southwestern United States southwards to central Mexico.",
+    "Cactus Jack is a Serbian rock band from Pančevo.",
+    "Cactus Hill is an archaeological site in southeastern Virginia, United States located on sand dunes above the Nottoway River about 45 miles south of Richmond."
+  ],
+  [
+    "https://en.wikipedia.org/wiki/Cactus",
+    "https://en.wikipedia.org/wiki/Cactus_Air_Force",
+    "https://en.wikipedia.org/wiki/Cactus_(American_band)",
+    "https://en.wikipedia.org/wiki/Cactus_Bowl",
+    "https://en.wikipedia.org/wiki/Cactus,_Texas",
+    "https://en.wikipedia.org/wiki/Cactus_Flower_(film)",
+    "https://en.wikipedia.org/wiki/Cactus_(Indian_band)",
+    "https://en.wikipedia.org/wiki/Cactus_wren",
+    "https://en.wikipedia.org/wiki/Cactus_Jack_(band)",
+    "https://en.wikipedia.org/wiki/Cactus_Hill"
+  ]
+]
+
+export function fetchWikipediaResults (uri) {
+  return new Promise((resolve, reject) => {
+    console.log('inside mock')
+    process.nextTick(() => {
+      if (`${uri}${cactus}` === `${wikipediaUri}${cactus}`) {
+        resolve(wikiData)
+      } else {
+        reject({ 'bad response': 'bad uri', uri })
+      }
+    })
+  })
+} 
+

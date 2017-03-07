@@ -5,22 +5,27 @@ const { array, object } = React.PropTypes
 
 function SearchResults (props) {
   let populatedResultComponents = []
+  let nothingFound = false
+  let searchResultsMissing = false
   const noResultsMessage = <h2>Nothing Found</h2>
   const errorMessage = <h2>An error occured.</h2>
-  let nothingFound = false
 
-  if (!props.error && props.searchResults.length > 1 && props.searchResults[1].length === 0) {
+  // If no results are found, render noResultsMessage
+  if (!props.error && props.searchResults && props.searchResults.length > 1 && props.searchResults[1].length === 0) {
     nothingFound = true
     populatedResultComponents = false
   }
 
   if (props.searchResults && props.searchResults[1]) {
-    populatedResultComponents = props.searchResults[1].map((result, i) => {
+    const headlines = props.searchResults[1]
+    const descriptions = props.searchResults[2]
+    const links = props.searchResults[3]
+    populatedResultComponents = headlines.map((result, i) => {
       let element = (
         <Result
-          headline={props.searchResults[1][i]}
-          description={props.searchResults[2][i]}
-          link={props.searchResults[3][i]}
+          headline={headlines[i]}
+          description={descriptions[i]}
+          link={links[i]}
           key={i}
         />
       )
@@ -28,17 +33,21 @@ function SearchResults (props) {
     })
   }
 
+  if (!props.searchResults) {
+    searchResultsMissing = true
+  }
+
   return (
     <section className='results'>
       {populatedResultComponents}
       {nothingFound ? noResultsMessage : null}
-      {props.error ? errorMessage : null}
+      {props.error | searchResultsMissing ? errorMessage : null}
     </section>
   )
 }
 
 SearchResults.propTypes = {
-  searchResults: array,
+  searchResults: array.isRequired,
   error: object
 }
 

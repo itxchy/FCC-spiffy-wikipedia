@@ -28,3 +28,8 @@ test('SearchResults should render "An error occured." if an error is passed to p
   const component = shallow(<SearchResults error={{ error: 'bad news' }} searchResults={null} />)
   expect(component.text()).toEqual('An error occured.')
 })
+
+test('SearchResults should render "An error occured." if nothis is passed to seachResults or error as props', () => {
+  const component = shallow(<SearchResults error={null} searchResults={null} />)
+  expect(component.text()).toEqual('An error occured.')
+})

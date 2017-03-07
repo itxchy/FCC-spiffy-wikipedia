@@ -4,7 +4,7 @@ import SearchBar from './SearchBar/SearchBar'
 import Header from './Header/Header'
 import SearchResults from './SearchResults/SearchResults'
 import { wikipediaUri } from '../config.js'
-import fetchJsonp from 'fetch-jsonp'
+import { fetchWikipediaResults } from './App.lib.js'
 
 class App extends Component {
   constructor (props) {
@@ -26,21 +26,14 @@ class App extends Component {
   }
 
   loadWikiData () {
+    if (this.state.searchQuery === '') { return }
     const wikipediaSearchUri = `${wikipediaUri}${this.state.searchQuery}`
-
-    fetchJsonp(wikipediaSearchUri)
-      .then(res => {
-        if (res.ok) {
-          return res.json()
-        } else {
-          return Promise.reject({ 'bad response': res })
-        }
-      })
+    fetchWikipediaResults(wikipediaSearchUri)
       .then(parsedResults => {
-        this.setState({ data: parsedResults, searchQuery: '', newQuery: false })
+        return this.setState({ data: parsedResults, searchQuery: '', newQuery: false })
       })
       .catch(error => {
-        this.setState({ error: { fetch: 'Request failed', error: error }, newQuery: false })
+        return this.setState({ error: { fetch: 'Request failed', error: error }, newQuery: false })
       })
   }
 
