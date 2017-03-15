@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './SearchBar.css'
-import { Form, FormGroup, FormControl, Button } from 'react-bootstrap'
+import SearchForm from './SearchForm'
 const { func } = React.PropTypes
 
 class SearchBar extends Component {
@@ -29,21 +29,13 @@ class SearchBar extends Component {
   render () {
     return (
       <div className='form-container'>
-        <Form inline onSubmit={this.handleSubmit}>
-          <FormGroup controlId='searchInput' bsSize='large'>
-            <FormControl
-              type='text'
-              value={this.state.searchText}
-              placeholder='What are you looking for?'
-              className='search-input'
-              onChange={this.handleSearchInputChange}
-            />
-          </FormGroup>
-          <Button type='submit' bsSize='large' onClick={this.handleSubmit} id='search-submit'>
-            Search
-          </Button>
-        </Form>
-        <a className='chance-link' href='https://en.wikipedia.org/wiki/Special:Random'>Take a chance!</a>
+        <SearchForm
+          handleSubmit={this.handleSubmit}
+          searchText={this.state.searchText}
+          handleSearchInputChange={this.handleSearchInputChange} />
+        <a className='chance-link' href='https://en.wikipedia.org/wiki/Special:Random'>
+          Take a chance!
+        </a>
       </div>
     )
   }
